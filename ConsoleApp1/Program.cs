@@ -1,29 +1,31 @@
-﻿int num1 = 0; int num2 = 0;
-Console.WriteLine("Questo è un calcolatore in c#\r");
+﻿decimal num1 = 0; decimal num2 = 0; string operator_ = ""; decimal result = 0;
+Console.WriteLine("This is a calculator in c#\r");
 Console.WriteLine("------------------------\n");
-Console.WriteLine("Inserisci un numero e premi invio");
-num1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Inserisci un altro numero e premi invio");
-num2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Scegli che operatore utilizzare tra i seguenti e premi invio");
-Console.WriteLine(" \ta = somma");
-Console.WriteLine(" \ts = sottrazione");
-Console.WriteLine(" \tm = moltiplicazione");
-Console.WriteLine(" \td = divisione");
-Console.Write("Cosa scegli? ");
-switch (Console.ReadLine())
+
+Console.WriteLine("Insert a number and press enter");
+num1 = Convert.ToDecimal(Console.ReadLine());
+Console.WriteLine("Insert the numerical operator and press enter ");
+operator_ = Console.ReadLine();
+Console.WriteLine("Insert another number and press enter");
+num2 = Convert.ToDecimal(Console.ReadLine());
+
+switch (operator_)
 {
-    case "a":
-        Console.WriteLine($"Your result: {num1} + {num2} = " + (num1 + num2));
+    case "+":
+        result = num1 + num2;
+        Console.WriteLine($"Your result is: {num1} + {num2} = " + result);
         break;
-    case "s":
-        Console.WriteLine($"Your result: {num1} - {num2} = " + (num1 - num2));
+    case "-":
+        result = num1 - num2;
+        Console.WriteLine($"Your result is: {num1} - {num2} = " + result);
         break;
-    case "m":
-        Console.WriteLine($"Your result: {num1} * {num2} = " + (num1 * num2));
+    case "*":
+        result = num1 * num2;
+        Console.WriteLine($"Your result is: {num1} * {num2} = " + result);
         break;
-    case "d":
-        Console.WriteLine($"Your result: {num1} / {num2} = " + (num1 / num2));
+    case "/":
+        result = num1 / num2;
+        Console.WriteLine($"Your result is: {num1} / {num2} = " + result);
         break;
 }
 Console.WriteLine("Press any key to close the Calculator console app...");
